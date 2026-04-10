@@ -894,9 +894,9 @@
           return;
         }
 
-        // Match against templates
+        // Match against templates (using word boundaries to prevent partial matches)
         const match = SUGGESTION_TEMPLATES.find(t =>
-          t.keywords.some(kw => val.includes(kw))
+          t.keywords.some(kw => new RegExp(`\\b${kw}`, 'i').test(val))
         );
 
         if (match) {
