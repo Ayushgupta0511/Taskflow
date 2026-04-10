@@ -84,5 +84,33 @@
     </div>
   </section>
 
+  <!-- Footer with Date & Motivational Quote -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-date" id="footerDate"></div>
+      <div class="footer-quote" id="footerQuote"></div>
+    </div>
+  </footer>
+
+  <script>
+    // Motivational Quotes
+    const quotes = [
+      "The secret of getting ahead is getting started. — Mark Twain",
+      "It always seems impossible until it's done. — Nelson Mandela",
+      "Don't watch the clock; do what it does. Keep going. — Sam Levenson",
+      "Quality is not an act, it is a habit. — Aristotle",
+      "Focus on being productive instead of busy. — Tim Ferriss",
+      "Amateurs sit and wait for inspiration, the rest of us just get up and go to work. — Stephen King"
+    ];
+
+    // Set Random Quote
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById('footerQuote').textContent = randomQuote;
+
+    // Set Current Day & Date
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('footerDate').textContent = today.toLocaleDateString('en-US', options);
+  </script>
 </body>
 </html>
